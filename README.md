@@ -2,6 +2,9 @@
 In this repository you will find an example of test automation with Playwright &amp; cucumber with a readable, maintainable and logical structure.
 
 
+![image](https://github.com/user-attachments/assets/4307ba2e-edf9-4e48-8a03-7458cc6769a0)
+
+
 The tests are carried out on the testing website https://www.demoblaze.com/, simulating some scenarios with good practices, such as:
 login, addition to shopping cart, etc.
 
