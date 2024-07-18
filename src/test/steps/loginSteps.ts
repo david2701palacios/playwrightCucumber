@@ -1,10 +1,10 @@
-import { Given, When, Then, After } from "@cucumber/cucumber";
+import { Given, When, Then } from "@cucumber/cucumber";
 import {expect} from "@playwright/test"
 import { pageFixture } from "../../hooks/pageFixture";
 
 
 Given("User navigates to the application", async function () {
-  await pageFixture.page.goto("https://www.demoblaze.com/");
+  await pageFixture.page.goto(process.env.BASEURL);
 });
 
 Given("User click on the login link", async function () {
@@ -29,8 +29,7 @@ Then("Login should be {string}", async function (output) {
     const textUser = await pageFixture.page.locator("#nameofuser").textContent();
     expect(textUser).toBe("Welcome test")
   }else{
-    await pageFixture.page.on('dialog', dialog => 
-      expect(dialog.message()).toBe("Wrong password.")
-     );
+    pageFixture.page.on('dialog', dialog => expect(dialog.message()).toBe("Wrong password.")
+    );
   }
 });

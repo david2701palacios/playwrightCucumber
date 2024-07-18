@@ -12,4 +12,4 @@ Feature: User Authentication tests
     Examples:
       | username | password | output  |
       | test     | test     | success |
-      | test2    | test     | failed  |
+      | test3    | test     | failed  |
