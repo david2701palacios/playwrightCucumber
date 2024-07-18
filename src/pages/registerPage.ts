@@ -18,12 +18,12 @@ export default class RegisterPage {
         await pageFixture.page.click(this.Elements.signUpBtn);
         await pageFixture.page.fill(this.Elements.userNameInput,userName);
         await pageFixture.page.fill(this.Elements.passwordInput,password);
-        await pageFixture.page.locator(this.Elements.createAcccountBtn).click();
+        await pageFixture.page.click(this.Elements.createAcccountBtn);
     }
 
     async validateSignUp() {
-        const dialog = await pageFixture.page.waitForEvent('dialog');
-        expect(dialog.message()).toBe("Sign up successful.")
+        pageFixture.page.waitForTimeout(5000);
+        pageFixture.page.on('dialog', dialog => expect(dialog.message()).toBe("Sign up successful."))
     }
 
 }

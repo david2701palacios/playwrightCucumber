@@ -6,7 +6,7 @@ Background:
     And User enter the username as "test"
     And User enter the password as "test"
     And User click on the login button
-
+@cart
  Scenario Outline: Add products to the cart 
     When User selected products:
     | Nexus 6  |

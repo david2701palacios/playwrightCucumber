@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env ENV=prod cucumber-js test",
+    "test": "cross-env ENV=prod cucumber-js --config=config/cucumber.js test",
     "generateReport": "npx ts-node src/helper/report.ts",
     "rerun": "cucumber-js -p rerun @rerun.txt"
   },

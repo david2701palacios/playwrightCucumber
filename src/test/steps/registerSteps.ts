@@ -9,7 +9,7 @@ Before(async () => {
 });
 
 When('User fills out the registration information', async function (dataTable) {
-    const userName = dataTable.rawTable[0][0]+ generateRandomInteger(999999999);
+    const userName = dataTable.rawTable[0][0]+" "+ generateRandomInteger(999999999);
     const password = dataTable.rawTable[0][1] 
     await registerPage.registerUser(userName,password)
   });
