@@ -17,8 +17,13 @@ login, addition to shopping cart, etc.
 npm i
 ```
 3. run test
+3.1 run all test
 ```javascript
 npm run test
+```
+3.2 run test by tags
+```javascript
+npm run test --TAGS="@login"
 ```
 4. generate report
 ```javascript

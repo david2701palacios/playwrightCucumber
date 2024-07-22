@@ -22,8 +22,7 @@ export default class RegisterPage {
     }
 
     async validateSignUp() {
-        pageFixture.page.waitForTimeout(5000);
-        pageFixture.page.on('dialog', dialog => expect(dialog.message()).toBe("Sign up successful."))
+        await pageFixture.page.on('dialog', dialog => expect(dialog.message()).toBe("Sign up successful."))
     }
 
 }

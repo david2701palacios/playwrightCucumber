@@ -1,7 +1,8 @@
-import { Given, When, Then } from "@cucumber/cucumber";
+import { Given, When, Then, setDefaultTimeout } from "@cucumber/cucumber";
 import {expect} from "@playwright/test"
 import { pageFixture } from "../../hooks/pageFixture";
 
+setDefaultTimeout(8000);
 
 Given("User navigates to the application", async function () {
   await pageFixture.page.goto(process.env.BASEURL);

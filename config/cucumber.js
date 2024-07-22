@@ -23,7 +23,7 @@ module.exports={
             "rerun:@rerun.txt"
         ],
         parallel: 2,
-        retry: 0
+        retry: 1
     },
     rerun : {
         formatOptions: {
