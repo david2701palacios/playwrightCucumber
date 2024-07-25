@@ -33,5 +33,8 @@ npm run generateReportCucumber
 ```javascript
 npm run generateReportCucumberBoostrap
 ```
+# Output obtained after the execution of the tests - Cucumber Boostrap:
+![image](https://github.com/user-attachments/assets/1f8e06f9-d395-4e9a-9e8e-733dd39603c7)
+
 # Output obtained after the execution of the tests:
 ![image](https://github.com/user-attachments/assets/76d3f48f-2d70-43c1-9f9a-ea1cf22757c6)
