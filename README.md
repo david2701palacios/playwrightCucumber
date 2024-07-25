@@ -25,9 +25,13 @@ npm run test
 ```javascript
 npm run test --TAGS="@login"
 ```
-4. generate report
+4. generate report cucumber
 ```javascript
-npm run generateReport
+npm run generateReportCucumber
+```
+5. generate report cucumber Boostrap
+```javascript
+npm run generateReportCucumberBoostrap
 ```
 # Output obtained after the execution of the tests:
 ![image](https://github.com/user-attachments/assets/76d3f48f-2d70-43c1-9f9a-ea1cf22757c6)

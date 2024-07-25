@@ -1,5 +1,21 @@
 module.exports={
     default: {
+        format: "src/reports/allure-reporter.ts",
+        formatOptions: {
+                links: [
+                  {
+                    pattern: [/@issue=(.*)/],
+                    type: "issue",
+                    urlTemplate: "https://example.com/issues/%s",
+                    nameTemplate: "Issue: %s",
+                  },
+                  {
+                    pattern: [/@tms=(.*)/],
+                    type: "tms",
+                    urlTemplate: "https://example.com/tasks/%s",
+                  },
+                ],
+              },
         tags: process.env.npm_config_TAGS || "", 
         formatOptions: {
             snippetInterface: "async-await"
@@ -22,8 +38,8 @@ module.exports={
             "json:test-results/cucumber-report.json",
             "rerun:@rerun.txt"
         ],
-        parallel: 2,
-        retry: 1
+        parallel: 1,
+        retry: 1,
     },
     rerun : {
         formatOptions: {

@@ -1,8 +1,10 @@
 import {BeforeAll, AfterAll, Before, After, Status, AfterStep} from "@cucumber/cucumber"
-import {chromium, Browser, BrowserContext} from "@playwright/test"
+import { Browser, BrowserContext} from "@playwright/test"
 import { pageFixture } from "./pageFixture";
 import { invokeBrowser } from "../helper/browsers/browserManager";
 import { getEnv } from "../helper/env/env";
+const fs = require('fs');
+const os = require('os');
 
 let browser : Browser;
 let context : BrowserContext; 
@@ -33,6 +35,15 @@ After(async function({pickle, result}){
 })
 
 AfterAll(async function () {
-     browser.close();
+    browser.close();
+    const metadata = {
+        "App Url": process.env.BASEURL,
+        "Test Environment": process.env.ENV,
+        "Browser": process.env.BROWSER,
+        "Platform": os.version(),
+        "Parallel": "Scenarios",
+        "Executed": "Remote"
+    };
+    fs.writeFileSync('./test-results/metadata.json', JSON.stringify(metadata, null, 2));
 })
 
